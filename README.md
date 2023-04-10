@@ -16,7 +16,7 @@ Currently there are three themes, but the colors can be easily changed via the t
 
 - [card-mod](https://github.com/thomasloven/lovelace-card-mod) for the shadows, insets etc.
 - [button-card](https://github.com/custom-cards/button-card) for the buttons
-- [kiosk-mode(]https://github.com/maykar/kiosk-mode) to hide the top bar on mobile devices
+- [kiosk-mode](https://github.com/maykar/kiosk-mode) to hide the top bar on mobile devices
 
 
 ## Cards I used
