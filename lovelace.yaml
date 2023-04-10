@@ -1,0 +1,3585 @@
+rtitle: Home
+kiosk_mode:
+  mobile_settings:
+    hide_header: true
+views:
+  - theme: Backend-selected
+    icon: mdi:sofa
+    path: wohnzimmer
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:sofa
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:desk
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: buero
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:bed
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: schlafzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:shower-head
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: badezimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:silverware
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:washing-machine
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: waschkueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:tree
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: aussen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-title-card
+                title: 'Wohnzimmer '
+                subtitle: '{{ states(''sensor.time'') }}'
+                alignment: center
+              - entity: sensor.wohnzimmer_luftfeuchtigkeit
+                icon: mdi:water-percent
+                size: 40%
+                tap_action:
+                  action: more-info
+                styles:
+                  img_cell:
+                    - justify-content: center
+                  card:
+                    - width: 80px
+                    - height: 80px
+                    - box-shadow: var(--soft-ui-inset)
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                show_state: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: sensor.wohnzimmer_temp_ist
+                icon: mdi:thermometer
+                size: 40%
+                tap_action:
+                  action: more-info
+                styles:
+                  img_cell:
+                    - justify-content: center
+                  card:
+                    - width: 80px
+                    - height: 80px
+                    - box-shadow: var(--soft-ui-inset)
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                show_state: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: custom:mushroom-climate-card
+            entity: climate.heizkorper_wohnzimmer
+            icon: mdi:heat-wave
+            fill_container: false
+            show_temperature_control: true
+            collapsible_controls: false
+            layout: horizontal
+            secondary_info: none
+            name: Temperatur soll
+            hvac_modes: []
+            tap_action:
+              action: more-info
+          - type: horizontal-stack
+            cards:
+              - entity: light.tv_lampe
+                icon: mdi:television-ambient-light
+                name: TV Lampe
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: switch.shelly_licht_wohnzimmer
+                icon: mdi:wall-sconce-round
+                name: Decke
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.shelly_dimmer_wohnzimmer
+                icon: mdi:light-recessed
+                name: Akzentbeleuchtung
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.led_strip
+                icon: mdi:fire
+                name: Kaminlampe
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: custom:mushroom-media-player-card
+            entity: media_player.apple_tv_wohnzimmer
+            media_controls:
+              - play_pause_stop
+              - previous
+              - next
+            volume_controls:
+              - volume_set
+            use_media_info: true
+            show_volume_level: false
+          - type: custom:mushroom-media-player-card
+            entity: media_player.sonos_wohnzimmer
+            show_volume_level: true
+            use_media_info: false
+            media_controls:
+              - play_pause_stop
+              - previous
+              - next
+            volume_controls:
+              - volume_set
+            collapsible_controls: false
+  - theme: Backend-selected
+    icon: mdi:desk
+    path: buero
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:sofa
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:desk
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: buero
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:bed
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: schlafzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:shower-head
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: badezimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:silverware
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:washing-machine
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: waschkueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:tree
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: aussen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-title-card
+                title: Büro
+                subtitle: '{{ states(''sensor.time'') }}'
+                alignment: center
+              - entity: sensor.buro_temp_ist
+                icon: mdi:thermometer
+                size: 40%
+                tap_action:
+                  action: more-info
+                styles:
+                  img_cell:
+                    - justify-content: center
+                  card:
+                    - width: 80px
+                    - height: 80px
+                    - box-shadow: var(--soft-ui-inset)
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                show_state: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: custom:mushroom-climate-card
+            entity: climate.heizkorper_buro
+            icon: mdi:heat-wave
+            fill_container: false
+            show_temperature_control: true
+            collapsible_controls: false
+            layout: horizontal
+            secondary_info: none
+            name: Temperatur soll
+            hvac_modes: []
+            tap_action:
+              action: more-info
+          - type: horizontal-stack
+            cards:
+              - entity: switch.shelly_licht_buero
+                icon: mdi:wall-sconce-round
+                name: Deckenlampe
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.pclampe
+                icon: mdi:desk
+                name: PC Lampe
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: switch.steckdose_buro
+                icon: mdi:power-socket-eu
+                name: Steckdose Monitor
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: switch.my_computer
+                icon: mdi:desktop-tower
+                name: Computer
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+  - theme: Backend-selected
+    icon: mdi:bed
+    path: schlafzimmer
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:sofa
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:desk
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: buero
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:bed
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: schlafzimmer
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:shower-head
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: badezimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:silverware
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:washing-machine
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: waschkueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:tree
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: aussen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-title-card
+                title: Schlafzimmer
+                subtitle: '{{ states(''sensor.time'') }}'
+                alignment: center
+              - entity: sensor.schlafzimmer_temp_ist
+                icon: mdi:thermometer
+                size: 40%
+                tap_action:
+                  action: more-info
+                styles:
+                  img_cell:
+                    - justify-content: center
+                  card:
+                    - width: 80px
+                    - height: 80px
+                    - box-shadow: var(--soft-ui-inset)
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                show_state: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: custom:mushroom-climate-card
+            entity: climate.heizkorper_schlafzimmer
+            icon: mdi:heat-wave
+            fill_container: false
+            show_temperature_control: true
+            collapsible_controls: false
+            layout: horizontal
+            secondary_info: none
+            name: Temperatur soll
+            hvac_modes: []
+            tap_action:
+              action: more-info
+          - type: horizontal-stack
+            cards:
+              - entity: switch.shelly_licht_schlafzimmer
+                icon: mdi:wall-sconce-flat
+                name: Deckenlampe
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.schlafzimmer_leselampe
+                icon: mdi:floor-lamp
+                name: Leselampe
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.bloom
+                icon: mdi:wall-sconce-round-variant
+                name: Nachttisch
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.nachtlicht
+                icon: mdi:wall-sconce-round-variant
+                name: Nachtlicht
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+  - theme: Backend-selected
+    icon: mdi:shower-head
+    path: badezimmer
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:sofa
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:desk
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: buero
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:bed
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: schlafzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:shower-head
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: badezimmer
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:silverware
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:washing-machine
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: waschkueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:tree
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: aussen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-title-card
+                title: Badezimmer
+                subtitle: '{{ states(''sensor.time'') }}'
+                alignment: center
+              - entity: sensor.bad_temp_ist
+                icon: mdi:thermometer
+                size: 40%
+                tap_action:
+                  action: more-info
+                styles:
+                  img_cell:
+                    - justify-content: center
+                  card:
+                    - width: 80px
+                    - height: 80px
+                    - box-shadow: var(--soft-ui-inset)
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                show_state: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: custom:mushroom-climate-card
+            entity: climate.heizkorper_badezimmer
+            icon: mdi:heat-wave
+            fill_container: false
+            show_temperature_control: true
+            collapsible_controls: false
+            layout: horizontal
+            secondary_info: none
+            name: Temperatur soll
+            hvac_modes: []
+            tap_action:
+              action: more-info
+          - type: horizontal-stack
+            cards:
+              - entity: light.shelly_bulb_bad
+                icon: mdi:lightbulb
+                name: Nachtlicht
+                size: 40%
+                aspect_ratio: 2/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: custom:mushroom-media-player-card
+            entity: media_player.sonos_badezimmer
+            show_volume_level: true
+            use_media_info: false
+            media_controls:
+              - play_pause_stop
+              - previous
+              - next
+            volume_controls:
+              - volume_set
+            collapsible_controls: false
+  - theme: Backend-selected
+    icon: mdi:silverware
+    path: kueche
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:sofa
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:desk
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: buero
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:bed
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: schlafzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:shower-head
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: badezimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:silverware
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kueche
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:washing-machine
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: waschkueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:tree
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: aussen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-title-card
+                title: Küche und Esszimmer
+                subtitle: '{{ states(''sensor.time'') }}'
+                alignment: center
+              - entity: sensor.esszimmer_temp_ist
+                icon: mdi:thermometer
+                size: 40%
+                tap_action:
+                  action: more-info
+                styles:
+                  img_cell:
+                    - justify-content: center
+                  card:
+                    - width: 80px
+                    - height: 80px
+                    - box-shadow: var(--soft-ui-inset)
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                show_state: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: custom:mushroom-climate-card
+            entity: climate.heizkorper_esszimmer
+            icon: mdi:heat-wave
+            fill_container: false
+            show_temperature_control: true
+            collapsible_controls: false
+            secondary_info: none
+            name: Temperatur soll
+            hvac_modes: []
+            tap_action:
+              action: more-info
+            layout: horizontal
+          - type: horizontal-stack
+            cards:
+              - entity: light.kuechenzeile
+                icon: mdi:led-strip-variant
+                name: Küchenzeile
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                type: custom:button-card
+              - entity: switch.shelly_licht_esszimmer
+                icon: mdi:light-recessed
+                name: Esszimmer
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                  card:
+                    - transform: scale(0.9)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: switch.shelly_licht_esstisch
+                icon: mdi:vanity-light
+                name: Esstisch
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  card:
+                    - transform: scale(0.9)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: switch.shelly_plug_airbowl
+                icon: mdi:coffee-maker
+                name: Kaffeemaschine
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  img_cell:
+                    - justify-content: center
+                  icon:
+                    - color: var(--primary-text-color)
+                  card:
+                    - transform: scale(0.9)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: custom:mushroom-media-player-card
+            entity: media_player.sonos_kueche
+            show_volume_level: true
+            use_media_info: false
+            media_controls:
+              - play_pause_stop
+              - previous
+              - next
+            volume_controls:
+              - volume_set
+            collapsible_controls: false
+  - theme: Backend-selected
+    icon: mdi:washing-machine
+    path: waschkueche
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:sofa
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:desk
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: buero
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:bed
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: schlafzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:shower-head
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: badezimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:silverware
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:washing-machine
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: waschkueche
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:tree
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: aussen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-title-card
+                title: Waschküche
+                subtitle: '{{ states(''sensor.time'') }}'
+                alignment: center
+          - type: custom:bar-card
+            entities:
+              - entity: sensor.waschzeit
+                min: '0'
+                max: '140'
+                name: Waschzeit
+            icon: mdi:timer
+          - type: custom:bar-card
+            entities:
+              - entity: sensor.trocknerzeit
+                min: '0'
+                max: '140'
+                name: Trocknerzeit
+            icon: mdi:timer
+          - type: horizontal-stack
+            cards:
+              - entity: sensor.waschmaschine_an
+                icon: mdi:washing-machine-off
+                name: Waschmaschine an?
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: more-info
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: Ja
+                    icon: mdi:washing-machine
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                type: custom:button-card
+              - entity: sensor.trockner_trocknet
+                icon: mdi:tumble-dryer-off
+                name: Trockner läuft?
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: more-info
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: Ja
+                    icon: mdi:tumble-dryer
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - align_state: center
+                animate: true
+                entities:
+                  - color: var(--secondary-color)
+                    entity: sensor.shelly_waschmaschine_stromverbrauch_aktuell
+                    name: Aktueller Verbrauch
+                hours_to_show: 1
+                lower_bound: 0
+                name: Waschmaschine
+                points_per_hour: 60
+                type: custom:mini-graph-card
+              - align_state: center
+                animate: true
+                entities:
+                  - color: var(--secondary-color)
+                    entity: sensor.shelly_trockner_stromverbrauch_aktuell
+                    name: Aktueller Verbrauch
+                    unit_of_measurement: W
+                hours_to_show: 1
+                lower_bound: 0
+                name: Trockner
+                points_per_hour: 60
+                type: custom:mini-graph-card
+  - theme: Backend-selected
+    icon: mdi:tree
+    path: aussen
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:sofa
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:desk
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: buero
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:bed
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: schlafzimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:shower-head
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: badezimmer
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:silverware
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:washing-machine
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: waschkueche
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:tree
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: aussen
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - type: custom:mushroom-title-card
+                title: Außenbereich
+                subtitle: '{{ states(''sensor.time'') }}'
+                alignment: center
+              - entity: sensor.bewegungsmelder_aussen_temperature
+                icon: mdi:thermometer
+                size: 40%
+                tap_action:
+                  action: more-info
+                styles:
+                  img_cell:
+                    - justify-content: center
+                  card:
+                    - width: 80px
+                    - height: 80px
+                    - box-shadow: var(--soft-ui-inset)
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                show_state: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: custom:mushroom-title-card
+            title: Einfahrt
+            alignment: center
+          - type: horizontal-stack
+            cards:
+              - entity: switch.shelly_licht_haustuer
+                icon: mdi:outdoor-lamp
+                name: Haustür
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                type: custom:button-card
+              - entity: switch.shelly_licht_einfahrt
+                icon: mdi:light-flood-up
+                name: Einfahrt
+                size: 40%
+                aspect_ratio: 1/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                    - transform: rotate(180deg)
+                  card:
+                    - transform: scale(0.9)
+                  name:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: start
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                type: custom:button-card
+          - type: custom:mushroom-cover-card
+            entity: cover.garagentor
+            layout: vertical
+            fill_container: false
+            show_position_control: false
+            show_tilt_position_control: false
+            show_buttons_control: true
+          - type: custom:mushroom-title-card
+            title: Garten
+            alignment: center
+          - type: horizontal-stack
+            cards:
+              - entity: group.garten_group
+                icon: mdi:ceiling-light
+                name: Gartenlicht
+                size: 40%
+                aspect_ratio: 2/1
+                tap_action:
+                  action: toggle
+                  haptic: light
+                styles:
+                  card:
+                    - transform: scale(0.9)
+                  icon:
+                    - color: var(--primary-text-color)
+                  name:
+                    - justify-self: center
+                    - font-weight: bold
+                    - font-size: 15px
+                    - padding-left: 15px
+                  state:
+                    - justify-self: center
+                    - font-weight: bold
+                    - font-size: 15px
+                    - opacity: 0.6
+                    - padding: 0 15px 5px
+                state:
+                  - value: 'on'
+                    styles:
+                      icon:
+                        - color: white
+                      name:
+                        - color: white
+                      state:
+                        - color: white
+                      card:
+                        - background-color: var(--secondary-color)
+                        - box-shadow: var(--soft-ui-pressed)
+                show_state: true
+                type: custom:button-card
+          - type: custom:mushroom-media-player-card
+            entity: media_player.sonos_garten
+            show_volume_level: true
+            use_media_info: false
+            media_controls:
+              - play_pause_stop
+              - previous
+              - next
+            volume_controls:
+              - volume_set
+            collapsible_controls: false
+          - type: entities
+            entities:
+              - entity: sensor.pool_temperatur
+              - entity: sensor.pool_helligkeit
+            title: Pool
+          - type: vertical-stack
+            cards:
+              - align_state: center
+                animate: true
+                show:
+                  state: false
+                  legend: false
+                entities:
+                  - color: '#e74c3c'
+                    entity: sensor.pool_temperatur
+                hours_to_show: 24
+                name: Pool Temperatur
+                points_per_hour: 60
+                type: custom:mini-graph-card
+              - align_state: center
+                animate: true
+                show:
+                  state: false
+                  legend: false
+                entities:
+                  - color: '#e74c3c'
+                    entity: sensor.pool_helligkeit
+                hours_to_show: 24
+                name: Pool Helligkeit
+                points_per_hour: 60
+                type: custom:mini-graph-card
+  - theme: Backend-selected
+    title: ''
+    icon: mdi:thermometer
+    path: temperatur
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            title: Wohnzimmer/Büro
+            cards:
+              - type: thermostat
+                entity: climate.heizkorper_wohnzimmer
+              - type: thermostat
+                entity: climate.heizkorper_buro
+          - align_state: center
+            show:
+              state: false
+              name: false
+              icon: false
+            entities:
+              - entity: sensor.wohnzimmer_temp_ist
+                color: '#e74c3c'
+                name: Wohnzimmer
+              - entity: sensor.buro_temp_ist
+                name: Büro
+            hours_to_show: 12
+            lower_bound: 16
+            name: Wohnzimmer
+            points_per_hour: 1
+            type: custom:mini-graph-card
+          - type: horizontal-stack
+            title: Küche/Esszimmer
+            cards:
+              - type: thermostat
+                entity: climate.heizkorper_kuche
+              - type: thermostat
+                entity: climate.heizkorper_esszimmer
+          - align_state: center
+            show:
+              state: false
+              name: false
+              icon: false
+            entities:
+              - entity: sensor.kuche_temp_ist
+                color: '#e74c3c'
+                name: Küche
+              - entity: sensor.esszimmer_temp_ist
+                name: Esszimmer
+            hours_to_show: 12
+            lower_bound: 16
+            name: Küche
+            points_per_hour: 1
+            type: custom:mini-graph-card
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                title: Bad/Schlafzimmer
+                cards:
+                  - type: thermostat
+                    entity: climate.heizkorper_badezimmer
+                  - type: thermostat
+                    entity: climate.heizkorper_schlafzimmer
+              - align_state: center
+                show:
+                  state: false
+                  name: false
+                  icon: false
+                entities:
+                  - entity: sensor.bad_temp_ist
+                    color: '#e74c3c'
+                    name: Bad
+                  - entity: sensor.schlafzimmer_temp_ist
+                    name: Schlafzimmer
+                hours_to_show: 12
+                lower_bound: 16
+                name: Badezimmer
+                points_per_hour: 1
+                type: custom:mini-graph-card
+              - type: horizontal-stack
+                title: Ankleidezimmer
+                cards:
+                  - type: thermostat
+                    entity: climate.heizkorper_ankleidezimmer
+              - align_state: center
+                show:
+                  state: false
+                  name: false
+                  icon: false
+                entities:
+                  - entity: sensor.ankleidezimmer_temp_ist
+                    color: '#e74c3c'
+                hours_to_show: 12
+                lower_bound: 16
+                name: Ankleidezimmer
+                points_per_hour: 1
+                type: custom:mini-graph-card
+  - theme: Backend-selected
+    icon: mdi:cctv
+    title: Kameras
+    path: kameras
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:cctv
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:cog
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: automationen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:lightning-bolt
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: strom
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:information
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: info
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:battery-90
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: batterien
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: picture-entity
+            entity: camera.kamar_taj_einfahrt
+            camera_image: camera.kamar_taj_einfahrt
+            show_state: false
+            name: Einfahrt
+            hold_action:
+              action: none
+            tap_action:
+              action: call-service
+              service: script.snapshot_einfahrt
+              service_data: {}
+              target: {}
+          - show_state: false
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.blink_garage
+            camera_image: camera.blink_garage
+            tap_action:
+              action: call-service
+              service: blink.trigger_camera
+              service_data: {}
+              target:
+                entity_id: camera.blink_garage
+            name: Garage
+            hold_action:
+              action: call-service
+              service: blink.blink_update
+              service_data: {}
+              target: {}
+          - show_state: false
+            show_name: true
+            camera_view: auto
+            type: picture-entity
+            entity: camera.haustur
+            name: Haustür
+            camera_image: camera.haustur
+            aspect_ratio: '16:9'
+            tap_action:
+              action: call-service
+              service: script.snapshot_haustur
+              data: {}
+              target: {}
+          - type: picture-entity
+            entity: camera.kamar_taj_garten
+            name: Garten
+            show_state: false
+            hold_action:
+              action: none
+            tap_action:
+              action: call-service
+              service: script.snapshot_garten
+              service_data: {}
+              target: {}
+  - theme: Backend-selected
+    icon: mdi:cog
+    path: automationen
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:cctv
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:cog
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: automationen
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:lightning-bolt
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: strom
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:information
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: info
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:battery-90
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: batterien
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: entities
+            entities:
+              - entity: automation.trockner_startet
+                icon: mdi:tumble-dryer
+              - entity: automation.trockner_fertig
+                icon: mdi:tumble-dryer-off
+              - entity: automation.trockner_fertig_sonos
+                icon: mdi:tumble-dryer-alert
+              - entity: automation.trocknerzeit
+                icon: mdi:timer
+              - type: divider
+              - entity: automation.waschmachine_startet
+                icon: mdi:washing-machine
+              - entity: automation.waschmaschine_fertig
+                icon: mdi:washing-machine-off
+              - entity: automation.waschmaschine_fertig_sonos
+                icon: mdi:washing-machine-alert
+              - entity: automation.waschzeit
+                icon: mdi:timer
+            title: Waschküche
+            show_header_toggle: false
+      - type: entities
+        entities:
+          - entity: automation.garagentor_statusanderung
+            icon: mdi:garage-variant
+          - entity: automation.schalter_garagentor
+            icon: mdi:remote-tv
+          - entity: automation.garagentor_offnet
+            icon: mdi:garage-open-variant
+          - entity: automation.garagentor_schliesst
+            icon: mdi:garage-variant
+          - entity: automation.garagentor_zu_lange_offen
+            icon: mdi:garage-alert-variant
+        title: Garage
+        show_header_toggle: false
+      - type: entities
+        entities:
+          - entity: automation.andrea_hat_dienst_automation_an
+            icon: mdi:thermometer
+          - entity: automation.heizung_an_wenn_andrea_dienst
+            icon: mdi:thermometer
+          - entity: automation.heizung_aus_wenn_keiner_da
+            icon: mdi:thermometer
+          - entity: automation.heizung_an_wenn_jemand_nach_hause_kommt
+            icon: mdi:thermometer
+          - entity: automation.homeoffice
+            icon: mdi:thermometer
+            name: Urlaub/HomeOffice
+          - entity: automation.heizung_startet
+            icon: mdi:radiator
+          - entity: automation.heizung_fertig
+            icon: mdi:radiator-disabled
+          - entity: automation.heizkoerper_schalten_sich_aus
+            icon: mdi:radiator-off
+        title: Heizung
+        show_header_toggle: false
+      - type: entities
+        title: Telefon
+        entities:
+          - entity: automation.rufnummer_speichern
+            icon: mdi:phone
+          - entity: automation.verpasster_anruf
+            icon: mdi:phone
+        show_header_toggle: false
+      - type: entities
+        entities:
+          - entity: automation.doorbell
+            icon: mdi:doorbell
+          - entity: automation.doorbell_light
+            icon: mdi:doorbell
+          - entity: automation.doorbell_light_ring
+            icon: mdi:doorbell
+          - entity: automation.doorbell_telegram
+            icon: mdi:doorbell
+        title: Türklingel
+        show_header_toggle: false
+      - type: entities
+        entities:
+          - entity: automation.licht_kueche_toggle
+            icon: mdi:led-strip-variant
+          - entity: automation.musik_kueche
+            icon: mdi:music-note
+          - entity: automation.musik_kueche_stop
+            icon: mdi:music-note-off
+          - entity: automation.musik_kueche_leiser
+            icon: mdi:volume-medium
+          - entity: automation.musik_kueche_lauter
+            icon: mdi:volume-high
+        title: Küche
+        show_header_toggle: false
+      - type: entities
+        entities:
+          - entity: automation.unbefugter_zutritt
+            icon: mdi:home-alert-outline
+          - entity: automation.aussenlicht
+            icon: mdi:lightbulb
+          - entity: automation.wenn_licht_zu_lange_an_fragen_ob_aus
+            icon: mdi:lightbulb
+          - entity: automation.backup
+            icon: mdi:disc
+          - entity: automation.nachtlicht_ein
+            icon: mdi:lightbulb-on
+          - entity: automation.nachtlicht_aus
+            icon: mdi:lightbulb-off
+          - entity: automation.stromausfall
+            icon: mdi:transmission-tower-off
+          - entity: automation.stromausfall_behoben
+            icon: mdi:transmission-tower
+          - entity: automation.airbowl
+            icon: mdi:air-purifier
+          - entity: automation.kaffeemaschine
+            icon: mdi:coffee-maker
+          - entity: automation.haustuer
+        show_header_toggle: false
+        title: Sonstiges
+  - theme: Backend-selected
+    icon: mdi:flash
+    path: strom
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:cctv
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:cog
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: automationen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:lightning-bolt
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: strom
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:information
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: info
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:battery-90
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: batterien
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - align_state: center
+                animate: true
+                entities:
+                  - color: var(--secondary-color)
+                    entity: sensor.shelly_trockner_stromverbrauch_aktuell
+                    name: Aktueller Verbrauch
+                    unit_of_measurement: W
+                hours_to_show: 1
+                lower_bound: 0
+                name: Trockner
+                points_per_hour: 60
+                type: custom:mini-graph-card
+              - align_state: center
+                animate: true
+                entities:
+                  - color: var(--secondary-color)
+                    entity: sensor.shelly_waschmaschine_stromverbrauch_aktuell
+                    name: Aktueller Verbrauch
+                hours_to_show: 1
+                lower_bound: 0
+                name: Waschmaschine
+                points_per_hour: 60
+                type: custom:mini-graph-card
+              - align_state: center
+                animate: true
+                entities:
+                  - color: var(--secondary-color)
+                    entity: sensor.shelly_plug_airbowl_stromverbrauch_aktuell
+                    name: Aktueller Verbrauch
+                    unit_of_measurement: W
+                hours_to_show: 1
+                lower_bound: 0
+                name: Kaffeemaschine
+                points_per_hour: 60
+                type: custom:mini-graph-card
+          - type: vertical-stack
+            cards:
+              - type: horizontal-stack
+                cards:
+                  - cards:
+                      - align_state: center
+                        animate: true
+                        entities:
+                          - color: var(--secondary-color)
+                            entity: >-
+                              sensor.shelly_licht_esstisch_stromverbrauch_aktuell
+                            name: Aktueller Verbrauch
+                        hours_to_show: 1
+                        lower_bound: 0
+                        name: Esstisch
+                        points_per_hour: 60
+                        type: custom:mini-graph-card
+                      - align_state: center
+                        animate: true
+                        entities:
+                          - color: var(--secondary-color)
+                            entity: >-
+                              sensor.shelly_licht_esszimmer_deckenlampe_stromverbrauch_aktuell
+                            name: Aktueller Verbrauch
+                        hours_to_show: 1
+                        lower_bound: 0
+                        name: Esszimmer
+                        points_per_hour: 60
+                        type: custom:mini-graph-card
+                    type: vertical-stack
+              - align_state: center
+                animate: true
+                entities:
+                  - color: var(--secondary-color)
+                    entity: sensor.shelly_dimmer_wohnzimmer_verbrauch_aktuell
+                    name: Aktueller Verbrauch
+                hours_to_show: 1
+                lower_bound: 0
+                name: Wohnzimmer
+                points_per_hour: 60
+                type: custom:mini-graph-card
+      - type: vertical-stack
+        cards:
+          - align_state: center
+            animate: true
+            entities:
+              - color: var(--secondary-color)
+                entity: sensor.shelly_plug_serverschrank_verbrauch_aktuell
+                name: Aktueller Verbrauch
+            hours_to_show: 1
+            lower_bound: 0
+            name: Stromverbrauch Serverschrank
+            points_per_hour: 60
+            type: custom:mini-graph-card
+          - align_state: center
+            animate: true
+            entities:
+              - color: var(--secondary-color)
+                entity: sensor.shelly_pm_heizung_verbrauch_aktuell
+                name: Aktueller Verbrauch
+            hours_to_show: 8
+            name: Stromverbrauch Heizung
+            points_per_hour: 60
+            type: custom:mini-graph-card
+      - type: vertical-stack
+        cards:
+          - type: entity
+            entity: sensor.stromverbrauch_gesamt
+            icon: mdi:flash
+            name: Stromverbrauch Gesamt
+          - type: entities
+            entities:
+              - entity: sensor.waschmaschine_stromverbrauch
+                icon: mdi:flash
+              - entity: sensor.trockner_stromverbrauch
+                icon: mdi:flash
+              - entity: sensor.serverschrank_stromverbrauch
+                icon: mdi:flash
+              - entity: sensor.heizung_stromverbrauch
+                icon: mdi:flash
+      - type: vertical-stack
+        cards:
+          - type: entity
+            entity: sensor.strom_kosten_gesamt
+            icon: mdi:currency-eur
+            name: Stromkosten Gesamt
+          - type: entities
+            entities:
+              - entity: sensor.strom_kosten_waschmaschine
+                icon: mdi:currency-eur
+              - entity: sensor.strom_kosten_trockner
+                icon: mdi:currency-eur
+              - entity: sensor.strom_kosten_serverschrank
+                icon: mdi:currency-eur
+              - entity: sensor.strom_kosten_heizung
+                icon: mdi:currency-eur
+            state_color: false
+            show_header_toggle: false
+      - type: entities
+        entities:
+          - entity: sensor.haus_stromverbrauch_aktuell
+          - entity: sensor.haus_stromverbrauch_gesamt
+  - theme: Backend-selected
+    icon: mdi:information
+    panel: false
+    title: Info
+    path: info
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:cctv
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:cog
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: automationen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:lightning-bolt
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: strom
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:information
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: info
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:battery-90
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: batterien
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - entities:
+              - entity: sensor.wohnzimmer_temp
+              - entity: sensor.bewegungsmelder_aussen_temperature
+              - entity: sensor.fenster_turkontaktsensor_temperature
+                name: Eingang Temperatur
+              - entity: sensor.wohnzimmer_luftfeuchtigkeit
+              - entity: binary_sensor.haustuer
+                icon: mdi:door
+              - entity: binary_sensor.bewegungsmelder_aussen_bewegung
+                name: Bewegungsmelder Außen
+              - entity: sensor.bewegungsmelder_aussen_licht
+                name: Bewegungsmelder Außen
+              - entity: sensor.garagentor
+              - entity: sensor.auto_drin
+            show_header_toggle: false
+            title: Status
+            type: entities
+          - entities:
+              - entity: binary_sensor.fritz_box_7530_connection
+                icon: mdi:wan
+                name: Online?
+              - entity: sensor.fritz_box_7530_external_ip
+                icon: mdi:ip-network
+              - entity: sensor.fritz_box_7530_connection_uptime
+                icon: mdi:play-network
+              - entity: sensor.fritz_box_7530_max_connection_download_throughput
+                name: Download
+              - entity: sensor.fritz_box_7530_max_connection_upload_throughput
+                name: Upload
+              - entity: sensor.phone_line_status
+            show_header_toggle: false
+            title: FritzBox
+            type: entities
+  - theme: Backend-selected
+    icon: mdi:battery-90
+    path: batterien
+    badges: []
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:home
+                tap_action:
+                  action: navigate
+                  navigation_path: wohnzimmer
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:thermometer
+                tap_action:
+                  action: navigate
+                  navigation_path: temperatur
+                styles:
+                  card:
+                    - height: 30px
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:dots-horizontal
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  card:
+                    - height: 30px
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - type: horizontal-stack
+            cards:
+              - entity: light.example
+                icon: mdi:cctv
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: kameras
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:cog
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: automationen
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:lightning-bolt
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: strom
+                styles:
+                  card:
+                    - box-shadow: var(--soft-ui-inset)
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:information
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: info
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+              - entity: light.example
+                icon: mdi:battery-90
+                aspect_ratio: 1/1
+                tap_action:
+                  action: navigate
+                  navigation_path: batterien
+                styles:
+                  icon:
+                    - color: var(--primary-text-color)
+                show_icon: true
+                show_name: false
+                card_mod:
+                  class: soft-ui
+                type: custom:button-card
+          - entities:
+              - entity: sensor.hastuer_battery_level
+                name: Türsensor Haustür
+              - entity: sensor.wohnzimmer_batterie
+                name: Wohnzimmer Temperatur
+              - entity: sensor.schalter_1_batterie
+                name: Schalter Garage
+              - entity: sensor.schalter_2_batterie
+                name: Schalter Wohnzimmer
+              - entity: sensor.doorbell_battery_level
+                name: Türklingel
+              - entity: sensor.bewegungsmelder_aussen_batterie
+                name: Bewegungsmelder Außen
+              - entity: sensor.heizkorper_wohnzimmer_battery
+              - entity: sensor.heizkorper_buro_battery
+              - entity: sensor.heizkorper_badezimmer_battery
+              - entity: sensor.heizkorper_schlafzimmer_battery
+              - entity: sensor.heizkorper_ankleidezimmer_battery
+              - entity: sensor.heizkorper_esszimmer_battery
+              - entity: sensor.heizkorper_kuche_battery
+            show_header_toggle: false
+            title: Batterien
+            type: entities
+            state_color: true
